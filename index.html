@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Amore Mio Eventos · Salón de fiestas en Morón</title>
+<meta name="description" content="Salón de fiestas en Weizman 776, Morón. Techo de madera a la vista, catering, shows y entrada accesible. 4,0 con 94 opiniones en Google.">
+<meta name="theme-color" content="#FAF6F0">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* pipeteados de las fotos del salon en la ficha de Google:
+     el techo de madera, la pared de fondo verde agua y el negro de las mesas.
+     Los tres vienen lavados por la luz de adentro: la saturacion esta compensada
+     (ver README). */
+  --madera:#6B4430;
+  --madera-osc:#4B2F21;
+  --madera-cl:#B08869;
+  --agua:#5E93A4;
+  --agua-cl:#DCE9EC;
+  --crema:#FAF6F0;
+  --crema-2:#F1E9DF;
+  --tinta:#201D1D;
+  --tinta-2:#4E4441;
+  --gris:#8A7C76;
+  --linea:#E3D8CB;
+  --r:4px;
+  --ancho:1080px;
+  --f:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--crema);color:var(--tinta);font-family:var(--f);font-size:16px;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.caja{width:100%;max-width:var(--ancho);margin:0 auto;padding:0 20px}
+section{padding:54px 0}
+h1,h2,h3{line-height:1.08;letter-spacing:-.022em;font-weight:800}
+h1{font-size:clamp(34px,8.6vw,56px)}
+h2{font-size:clamp(25px,6.2vw,37px)}
+h3{font-size:19px;font-weight:800;letter-spacing:-.012em}
+p{text-wrap:pretty}
+/* el rotulo va en versalitas centradas con dos filetes, como una invitacion */
+.rotulo{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--madera);margin-bottom:16px}
+.rotulo::after{content:"";height:1px;background:var(--linea);flex:1}
+.sub{color:var(--tinta-2);font-size:16px;margin-top:13px;max-width:56ch}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 22px;border-radius:999px;font-size:15px;font-weight:800;
+  border:1.5px solid transparent;cursor:pointer;line-height:1;font-family:inherit}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-ma{background:var(--madera);color:var(--crema)}
+.btn-linea{border-color:var(--madera);color:var(--madera);background:transparent}
+.btn-chico{padding:11px 17px;font-size:14px}
+.btn:focus-visible{outline:3px solid var(--agua);outline-offset:3px}
+
+/* ---------- barra ---------- */
+.top{position:sticky;top:0;z-index:40;background:rgba(250,246,240,.96);backdrop-filter:blur(9px);border-bottom:1px solid var(--linea)}
+.top .caja{display:flex;align-items:center;gap:12px;height:64px}
+.marca{display:flex;align-items:center;gap:11px;margin-right:auto;min-width:0}
+.iso{width:34px;height:34px;flex:none}
+.marca b{font-size:17px;font-weight:800;font-style:italic;letter-spacing:-.01em;line-height:1.05;display:block;color:var(--madera-osc)}
+.marca small{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);font-weight:700}
+.solo-gr{display:none}
+@media(min-width:780px){.solo-gr{display:inline-flex}}
+
+/* ---------- portada ----------
+   Sin foto: las del salon estan en la ficha de Google y son de quien las subio,
+   asi que no se pueden publicar. La portada se resuelve con el logotipo y la
+   guirnalda de luces, que es lo que se ve colgado en el salon en esas fotos. */
+.hero{padding:46px 0 0;background:linear-gradient(180deg,var(--crema) 0%,var(--crema-2) 100%);
+  border-bottom:1px solid var(--linea);text-align:center}
+.hero .rotulo{justify-content:center}
+.hero .rotulo::after{display:none}
+.hero .rotulo::before{content:"";height:1px;background:var(--linea);width:38px}
+.hero h1{max-width:16ch;margin:0 auto}
+.hero h1 em{font-style:italic;color:var(--madera)}
+.hero .bajada{color:var(--tinta-2);font-size:17px;margin:16px auto 0;max-width:50ch}
+.sellos{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;justify-content:center}
+.sello{display:inline-flex;align-items:center;gap:7px;background:var(--crema);border:1px solid var(--linea);
+  border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:700}
+.sello svg{width:16px;height:16px;flex:none;color:var(--madera)}
+.sello .estrella{color:#D9A21B}
+.sello b{color:var(--tinta)}
+.sello span{color:var(--gris);font-weight:600}
+.acciones{display:flex;flex-wrap:wrap;gap:11px;margin-top:26px;justify-content:center}
+.logotipo{margin-top:40px}
+.logotipo svg{width:min(88vw,540px);height:auto;margin:0 auto}
+
+/* ---------- que encontras: lista con filete, no tarjetas con borde ---------- */
+.cosas{display:grid;gap:0;margin-top:26px;grid-template-columns:1fr}
+@media(min-width:760px){.cosas{grid-template-columns:1fr 1fr;column-gap:44px}}
+.cosa{padding:24px 0;border-top:1px solid var(--linea);display:flex;gap:16px;align-items:flex-start}
+.cosa .ico{width:44px;height:44px;border-radius:999px;display:grid;place-items:center;flex:none;
+  background:var(--agua-cl);color:var(--madera)}
+.cosa .ico svg{width:22px;height:22px}
+.cosa p{color:var(--tinta-2);font-size:15px;margin-top:6px}
+
+/* ---------- por que ---------- */
+.franja{background:var(--madera-osc);color:var(--crema);border-top:1px solid var(--linea)}
+.franja .rotulo{color:var(--madera-cl)}
+.franja .rotulo::after{background:rgba(250,246,240,.2)}
+.franja .sub{color:#D6C5B8}
+.motivos{display:grid;gap:14px;margin-top:28px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.motivo{background:rgba(250,246,240,.06);border:1px solid rgba(250,246,240,.14);border-radius:var(--r);padding:26px}
+.motivo b{display:block;font-size:19px;font-weight:800;font-style:italic;margin-bottom:8px;color:var(--crema)}
+.motivo p{color:#CDBBAE;font-size:14.5px}
+
+/* ---------- opiniones ---------- */
+.ops{display:grid;gap:16px;margin-top:28px;grid-template-columns:repeat(auto-fit,minmax(262px,1fr))}
+.op{border-top:3px solid var(--madera);padding:22px 0 0}
+.op .estrellas{color:#D9A21B;font-size:13.5px;letter-spacing:.09em;margin-bottom:10px}
+.op p{font-size:16px;color:var(--tinta-2);font-style:italic}
+.op cite{display:block;margin-top:12px;font-style:normal;font-size:12.5px;color:var(--gris);font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- donde ---------- */
+.donde{display:grid;gap:26px}
+@media(min-width:860px){.donde{grid-template-columns:1fr 1fr;align-items:start}}
+.dato{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--linea);align-items:flex-start}
+.dato:last-child{border-bottom:0}
+.dato>svg{width:20px;height:20px;flex:none;color:var(--madera);margin-top:3px}
+.dato b{display:block;font-size:16px;font-weight:800}
+.dato span span{display:block;color:var(--gris);font-size:14.5px;margin-top:2px}
+.mapa{border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;min-height:320px}
+.mapa iframe{width:100%;height:100%;min-height:320px;border:0;display:block}
+
+.pie{background:var(--crema-2);color:var(--tinta-2);padding:36px 0 28px;font-size:14px;border-top:1px solid var(--linea)}
+.pie .caja{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.pie b{color:var(--madera-osc);font-style:italic;font-size:16px}
+.pie .firma{font-size:12.5px;color:var(--gris)}
+.pie .firma a{color:var(--madera);text-decoration:underline}
+
+.flota{position:fixed;right:15px;bottom:15px;z-index:50;box-shadow:0 12px 28px -10px rgba(75,47,33,.6)}
+@media(min-width:900px){.flota{right:24px;bottom:24px}}
+@media(prefers-reduced-motion:no-preference){
+  .rev{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .rev.in{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <!-- isotipo: el arco. En las fotos del salon el frente y los paños de tela
+       arman ese arco; sirve de marca hasta que el dueño pase su logo. -->
+  <symbol id="iso" viewBox="0 0 64 64">
+    <rect width="64" height="64" rx="13" fill="#FAF6F0"/>
+    <path fill="#6B4430" d="M32 12c-8.3 0-15 6.7-15 15v25h7.6V27a7.4 7.4 0 0 1 14.8 0v25H47V27c0-8.3-6.7-15-15-15"/>
+  </symbol>
+  <!-- logotipo tipografico + la guirnalda de luces que cuelga en el salon -->
+  <symbol id="logotipo" viewBox="0 0 540 190">
+    <path d="M6 18C90 58 170 58 270 30 370 2 450 24 534 52" fill="none" stroke="#B08869" stroke-width="2.4"/>
+    <g fill="#D9A21B">
+      <circle cx="52" cy="38" r="5"/><circle cx="106" cy="50" r="5"/><circle cx="162" cy="52" r="5"/>
+      <circle cx="218" cy="44" r="5"/><circle cx="272" cy="30" r="5"/><circle cx="326" cy="20" r="5"/>
+      <circle cx="380" cy="18" r="5"/><circle cx="436" cy="28" r="5"/><circle cx="490" cy="42" r="5"/>
+    </g>
+    <text x="270" y="126" text-anchor="middle" font-family="Figtree,sans-serif" font-size="82"
+          font-weight="800" font-style="italic" letter-spacing="-2" fill="#4B2F21">Amore Mio</text>
+    <text x="270" y="162" text-anchor="middle" font-family="Figtree,sans-serif" font-size="19"
+          font-weight="800" letter-spacing="13" fill="#6B4430">EVENTOS</text>
+  </symbol>
+  <symbol id="tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.39 21 3 13.61 3 4.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></symbol>
+  <symbol id="star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 17.27 5.18 3.13-1.37-5.89 4.57-3.96-6.02-.51L12 4.5 9.64 10.04l-6.02.51 4.57 3.96-1.37 5.89z"/></symbol>
+  <symbol id="accesible" viewBox="0 0 24 24"><circle cx="14.4" cy="3.6" r="2.3" fill="currentColor"/><path fill="currentColor" d="M13 7.4h2.8v3.2h4.2a1.2 1.2 0 0 1 0 2.4h-4.2v.2l2.7 4.2h2.9v2.4h-4.2L13 13.4z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M11.5 12.7a5.3 5.3 0 1 0 4.4 7.5"/></symbol>
+  <!-- un icono distinto por tarjeta -->
+  <symbol id="c-salon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 1.6 9.2l1.1 1.6L4 9.9V21h16V9.9l1.3.9 1.1-1.6zm-6 8.5 6-4.2 6 4.2V19H6zM8.6 12h6.8v1.8H8.6z"/></symbol>
+  <symbol id="c-catering" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a8 8 0 0 0-7.9 6.8h15.8A8 8 0 0 0 12 4m0-2.4 .9 1.5h-1.8zM1.8 12.4h20.4v2H1.8zm1.4 3.8h17.6a1.4 1.4 0 0 1 0 2.8H3.2a1.4 1.4 0 0 1 0-2.8"/></symbol>
+  <symbol id="c-show" viewBox="0 0 24 24"><path fill="currentColor" d="M12.8 2.4v11.3a3.7 3.7 0 1 0 2 3.3V7.6c1.1.9 2.6 1.4 4.2 1.5V6.9c-2.4-.2-4.2-2-4.2-4.5zM4.4 8.2h5.2v2H4.4zm-1.8 4h7v2h-7z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="caja">
+    <a class="marca" href="#">
+      <svg class="iso"><use href="#iso"/></svg>
+      <span>
+        <b>Amore Mio</b>
+        <small>Eventos · Morón</small>
+      </span>
+    </a>
+    <a class="btn btn-linea btn-chico solo-gr" href="#salon">El salón</a>
+    <a class="btn btn-ma" href="tel:01158385513">
+      <svg><use href="#tel"/></svg> Llamar
+    </a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ portada ============ -->
+<section class="hero">
+  <div class="caja">
+    <span class="rotulo">Weizman 776 · Morón</span>
+    <h1>Un salón <em>cálido</em><br>para tu fiesta.</h1>
+    <p class="bajada">Techo de madera a la vista, mesas redondas, pista de baile y una entrada con palmeras, sobre la calle Weizman de Morón.</p>
+
+    <div class="sellos">
+      <span class="sello">
+        <svg class="estrella"><use href="#star"/></svg>
+        <b>4,0</b><span>· 94 opiniones en Google</span>
+      </span>
+      <span class="sello">
+        <svg><use href="#accesible"/></svg>
+        <b>Entrada accesible</b>
+      </span>
+    </div>
+
+    <div class="acciones">
+      <a class="btn btn-ma" href="tel:01158385513">
+        <svg><use href="#tel"/></svg> 011 5838-5513
+      </a>
+      <a class="btn btn-linea" href="#donde">
+        <svg><use href="#pin"/></svg> Cómo llegar
+      </a>
+    </div>
+
+    <div class="logotipo rev">
+      <svg viewBox="0 0 540 190" role="img" aria-label="Amore Mio Eventos"><use href="#logotipo"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ que encontras ============ -->
+<section id="salon">
+  <div class="caja">
+    <span class="rotulo">Qué encontrás</span>
+    <h2>El salón, la comida<br>y el show.</h2>
+    <p class="sub">Cumpleaños, fiestas familiares y eventos, en un solo lugar de Morón.</p>
+
+    <div class="cosas">
+      <article class="cosa rev">
+        <div class="ico"><svg><use href="#c-salon"/></svg></div>
+        <div>
+          <h3>El salón</h3>
+          <p>Techo de madera a la vista, mesas redondas y guirnaldas de luces colgando. Amplio, con pista de baile y luces de color.</p>
+        </div>
+      </article>
+      <article class="cosa rev">
+        <div class="ico"><svg><use href="#c-catering"/></svg></div>
+        <div>
+          <h3>El catering</h3>
+          <p>“Buena atención del servicio de catering”, dice una de las opiniones de Google. El servicio se arma según la fiesta.</p>
+        </div>
+      </article>
+      <article class="cosa rev">
+        <div class="ico"><svg><use href="#c-show"/></svg></div>
+        <div>
+          <h3>Los shows</h3>
+          <p>Hay noches con show en vivo. “Lo que más nos sorprendió fue el show de Juan Echegoyen”, escribió uno de los invitados.</p>
+        </div>
+      </article>
+      <article class="cosa rev">
+        <div class="ico"><svg><use href="#accesible"/></svg></div>
+        <div>
+          <h3>Entrada accesible</h3>
+          <p>La entrada es accesible para personas en silla de ruedas. Los abuelos entran sin que nadie los tenga que alzar.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ por que ============ -->
+<section class="franja">
+  <div class="caja">
+    <span class="rotulo">Por qué acá</span>
+    <h2>Lo que dicen<br>los que ya festejaron.</h2>
+    <p class="sub">Tres cosas que se repiten en las 94 opiniones de Google del salón.</p>
+
+    <div class="motivos">
+      <article class="motivo rev">
+        <b>Cómodo y cálido</b>
+        <p>“Un espacio lindo, cómodo y acogedor.” Son las tres palabras que más vuelven cuando alguien cuenta cómo la pasó.</p>
+      </article>
+      <article class="motivo rev">
+        <b>La atención</b>
+        <p>“Muy buen servicio.” El día de tu fiesta no querés estar corriendo atrás de nadie.</p>
+      </article>
+      <article class="motivo rev">
+        <b>Para la familia</b>
+        <p>“Familia” aparece 5 veces en las opiniones, y “salón” 6. Acá se festejan cumpleaños y fiestas familiares.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ opiniones ============ -->
+<section>
+  <div class="caja">
+    <span class="rotulo">Opiniones de Google</span>
+    <h2>4,0 sobre 94.</h2>
+    <p class="sub">Textuales, de la ficha de Google de Amore Mio Eventos.</p>
+
+    <div class="ops">
+      <article class="op rev">
+        <div class="estrellas">★★★★★</div>
+        <p>“Muy lindo salón y buena atención del servicio de catering, pero lo que más nos sorprendió fue el show de Juan Echegoyen.”</p>
+        <cite>Miguel Arias · Local Guide</cite>
+      </article>
+      <article class="op rev">
+        <div class="estrellas">★★★★★</div>
+        <p>“Un espacio lindo, cómodo y acogedor. Muy buen servicio.”</p>
+        <cite>Gabrielaedith Saganias · Local Guide</cite>
+      </article>
+      <article class="op rev">
+        <div class="estrellas">★★★★★</div>
+        <p>“Excelente lugar, muy cómodo, muy cálido.”</p>
+        <cite>Opinión destacada en Google</cite>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ donde ============ -->
+<section id="donde" style="background:var(--crema-2);border-top:1px solid var(--linea)">
+  <div class="caja">
+    <span class="rotulo">Dónde estamos</span>
+    <h2>Weizman 776,<br>Morón.</h2>
+
+    <div class="donde" style="margin-top:26px">
+      <div>
+        <div class="dato">
+          <svg><use href="#pin"/></svg>
+          <span><b>Weizman 776</b><span>B1708 Morón, Provincia de Buenos Aires</span></span>
+        </div>
+        <div class="dato">
+          <svg><use href="#tel"/></svg>
+          <span><b><a href="tel:01158385513">011 5838-5513</a></b><span>Consultá la fecha que tenés en mente</span></span>
+        </div>
+        <div class="dato">
+          <svg><use href="#accesible"/></svg>
+          <span><b>Entrada accesible para personas en silla de ruedas</b><span>Así figura en la ficha de Google del salón</span></span>
+        </div>
+        <a class="btn btn-ma" style="margin-top:22px" href="tel:01158385513">
+          <svg><use href="#tel"/></svg> Consultá tu fecha
+        </a>
+      </div>
+
+      <div class="mapa rev">
+        <iframe title="Mapa de Amore Mio Eventos, Weizman 776, Morón" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Weizman%20776,%20Mor%C3%B3n&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="caja">
+    <div>
+      <b>Amore Mio Eventos</b><br>
+      Weizman 776, Morón · 011 5838-5513
+    </div>
+    <div class="firma">
+      Demo hecha por <a href="https://tunegocioenlasredes.com.ar" target="_blank" rel="noopener">Tu Negocio En Las Redes</a>.<br>
+      Página de muestra, sin publicar.
+    </div>
+  </div>
+</footer>
+
+<a class="btn btn-ma flota" href="tel:01158385513" aria-label="Llamar a Amore Mio Eventos">
+  <svg><use href="#tel"/></svg> Llamar
+</a>
+
+<script>
+/* Aparecer al scrollear. NO se usa IntersectionObserver a proposito: con un
+   scroll rapido las secciones pasan entre frames, no se registran y quedan
+   invisibles para siempre. Ademas hay una red de seguridad a los 4 segundos. */
+(function () {
+  var els = [].slice.call(document.querySelectorAll('.rev'));
+  if (!els.length) return;
+  var pedido = false;
+  function revisar() {
+    pedido = false;
+    var alto = window.innerHeight;
+    for (var i = els.length - 1; i >= 0; i--) {
+      if (els[i].getBoundingClientRect().top < alto - 60) {
+        els[i].classList.add('in');
+        els.splice(i, 1);
+      }
+    }
+  }
+  function pedir() { if (!pedido) { pedido = true; requestAnimationFrame(revisar); } }
+  addEventListener('scroll', pedir, { passive: true });
+  addEventListener('resize', pedir, { passive: true });
+  revisar();
+  setTimeout(function () {
+    document.querySelectorAll('.rev').forEach(function (e) { e.classList.add('in'); });
+  }, 4000);
+})();
+</script>
+</body>
+</html>
